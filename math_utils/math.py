@@ -1,16 +1,59 @@
 def add(a, b):
+    """Складывает два числа.
+
+    Args:
+        a: Первое число.
+        b: Второе число.
+
+    Returns:
+        Сумма двух чисел.
+    """
+
     return a + b
 
 
 def subtract(a, b):
+    """Вычитает одно число из другого.
+
+    Args:
+        a: Число, из которого вычитают.
+        b: Число, которое вычитают.
+
+    Returns:
+        Разность двух чисел.
+    """
+
     return a - b
 
 
 def multiply(a, b):
+    """Перемножает два числа.
+
+    Args:
+        a: Первое число.
+        b: Второе число.
+
+    Returns:
+        Произведение двух чисел.
+    """
+
     return a * b
 
 
 def divide(a, b):
+    """Делит одно число на другое.
+
+    Args:
+        a: Делимое.
+        b: Делитель.
+
+    Returns:
+        Частное двух чисел.
+
+    Raises:
+        ValueError: Если делитель равен нулю.
+    """
+
     if b == 0:
-        raise ValueError("Cannot divide by zero")
+        raise ValueError("Нельзя делить на ноль")
     return a / b
