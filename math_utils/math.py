@@ -1,3 +1,7 @@
+from math_utils.decorators import *
+
+
+@only_int_float_func
 def add(a, b):
     """Складывает два числа.
 
@@ -12,6 +16,7 @@ def add(a, b):
     return a + b
 
 
+@only_int_float_func
 def subtract(a, b):
     """Вычитает одно число из другого.
 
@@ -26,6 +31,7 @@ def subtract(a, b):
     return a - b
 
 
+@only_int_float_func
 def multiply(a, b):
     """Перемножает два числа.
 
@@ -40,6 +46,7 @@ def multiply(a, b):
     return a * b
 
 
+@only_int_float_func
 def divide(a, b):
     """Делит одно число на другое.
 
