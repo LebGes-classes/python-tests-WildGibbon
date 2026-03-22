@@ -56,4 +56,5 @@ def divide(a, b):
 
     if b == 0:
         raise ValueError("Нельзя делить на ноль")
+
     return a / b
