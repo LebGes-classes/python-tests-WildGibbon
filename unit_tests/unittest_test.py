@@ -1,4 +1,5 @@
 from math_utils import *
+from math_utils.decorators import math_decorators
 import unittest
 
 
@@ -25,3 +26,31 @@ class TestMyFunctions(unittest.TestCase):
     def test_zero_divide(self):
         with self.assertRaises(ValueError):
             divide(1, 0)
+
+    def test_only_int_float_incorrect(self):
+        params = [
+            (0, "a"),
+            ("a", "a"),
+        ]
+        for a, b in params:
+            with self.subTest(a=a, b=b):
+                @math_decorators.only_int_float_func
+                def mock(a, b):
+                    pass
+
+                with self.assertRaises(TypeError):
+                    mock(a, b)
+
+    def test_only_int_float_correct(self):
+        params = [
+            (0, 0),
+            (0, 0.1),
+            (0.1, 0.1)
+        ]
+        for a, b in params:
+            with self.subTest(a=a, b=b):
+                @math_decorators.only_int_float_func
+                def mock(a, b):
+                    pass
+                
+                mock(a, b)

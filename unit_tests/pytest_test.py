@@ -45,3 +45,40 @@ def test_divide(a, b, expected):
 def test_zero_divide():
     with pytest.raises(ValueError):
         divide(1, 0)
+
+
+@pytest.mark.parametrize("a, b", [
+    (0, "a"),
+    ("a", "a"),
+])
+def test_only_int_float_incorrect(a, b):
+    @math_decorators.only_int_float_func
+    def mock(a, b):
+        pass
+
+    with pytest.raises(TypeError):
+        mock(a, b)
+
+
+@pytest.mark.parametrize("a, b", [
+    (0, 0),
+    (0, 0.1),
+    (0.1, 0.1)
+])
+def test_only_int_float_correct(a, b):
+    @math_decorators.only_int_float_func
+    def mock(a, b):
+        pass
+
+    mock(a, b)
+    assert True
+
+
+
+
+
+
+
+
+
+
