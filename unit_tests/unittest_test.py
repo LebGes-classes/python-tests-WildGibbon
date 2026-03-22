@@ -33,13 +33,12 @@ class TestMyFunctions(unittest.TestCase):
             ("a", "a"),
         ]
         for a, b in params:
-            with self.subTest(a=a, b=b):
-                @math_decorators.only_int_float_func
-                def mock(a, b):
-                    pass
+            @math_decorators.only_int_float_func
+            def mock(a, b):
+                pass
 
-                with self.assertRaises(TypeError):
-                    mock(a, b)
+            with self.assertRaises(TypeError):
+                mock(a, b)
 
     def test_only_int_float_correct(self):
         params = [
@@ -48,9 +47,8 @@ class TestMyFunctions(unittest.TestCase):
             (0.1, 0.1)
         ]
         for a, b in params:
-            with self.subTest(a=a, b=b):
-                @math_decorators.only_int_float_func
-                def mock(a, b):
-                    pass
-                
-                mock(a, b)
+            @math_decorators.only_int_float_func
+            def mock(a, b):
+                pass
+
+            mock(a, b)
