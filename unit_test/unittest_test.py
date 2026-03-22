@@ -17,3 +17,11 @@ class TestMyFunctions(unittest.TestCase):
         self.assertEqual(multiply(2, 3), 6)
         self.assertEqual(multiply(-2, 3), -6)
         self.assertEqual(multiply(0, 5), 0)
+
+    def test_divide(self):
+        self.assertEqual(divide(6, 3), 2)
+        self.assertEqual(divide(5, 2), 2.5)
+
+    def test_zero_divide(self):
+        with self.assertRaises(ValueError):
+            divide(1, 0)

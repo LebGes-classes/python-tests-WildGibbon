@@ -44,4 +44,4 @@ def test_divide(a, b, expected):
 
 def test_zero_divide():
     with pytest.raises(ValueError):
-        divide(0, 0)
+        divide(1, 0)
